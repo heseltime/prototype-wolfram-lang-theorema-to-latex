@@ -1,0 +1,107 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      3408,         99]
+NotebookOptionsPosition[      2620,         77]
+NotebookOutlinePosition[      3019,         93]
+CellTagsIndexPosition[      2976,         90]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Easy Setup", "Section",
+ CellChangeTimes->{{3.899896539120264*^9, 
+  3.8998965411652017`*^9}},ExpressionUUID->"9d5feb63-170b-4fa1-bdcc-\
+6bd7628dfda8"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Theorema`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8998964805371075`*^9, 3.8998964876102395`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"f03a1f8e-3674-4b92-b750-0e18baf60ff3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Notebooks", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.899896505066921*^9, 3.8998965092033186`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"1127ab6f-7642-4bde-87fe-a7a3d4e230b5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[<|
+    "obj" -> NotebookObject[
+      "19ce6b8a-a0a0-4e72-97ed-4012dfe94f1c", 
+       "2303f5ba-4f15-4232-bbd9-8820453ca25b"], "label" -> 
+     "\"Theorema Commander\""|>,
+    "NotebookObjectUUIDsUnsaved"], ",", 
+   TemplateBox[<|
+    "obj" -> NotebookObject[
+      "f9ddcd51-cc12-4165-9bf3-1c40dbc13ebf", 
+       "0764f32a-6bfd-4571-abaf-17f4f4da0f2e"], "label" -> "\"Untitled-1\""|>,
+    "NotebookObjectUUIDsUnsaved"], ",", 
+   TemplateBox[<|
+    "obj" -> NotebookObject[
+      "49916690-3deb-452a-85c1-ba123f32bfe0", 
+       "4fae39a9-77c6-462c-b8ae-473bb73764ce"], "label" -> "\"FirstTour.nb\"",
+      "tooltip" -> 
+     "\"C:\\\\Users\\\\jackh\\\\OneDrive\\\\Documents\\\\RISC2023\\\\\
+prototype\\\\FirstTour.nb\""|>,
+    "NotebookObjectUUIDs"], ",", 
+   TemplateBox[<|
+    "obj" -> NotebookObject[
+      "88145893-82b1-4463-b584-834964b52f87", 
+       "e2326700-ea1d-4bdf-9304-33d99a3c3b18"], "label" -> "\"Messages\""|>,
+    "NotebookObjectUUIDsUnsaved"]}], "}"}]], "Output",
+ CellChangeTimes->{3.899896510154603*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"48848eb9-20cd-4f6e-8f76-e2b4059c52d8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Prototypes in Wolfram Language: Parsing", "Section",
+ CellChangeTimes->{{3.8998965506712074`*^9, 3.899896559369567*^9}, {
+  3.8998965943176284`*^9, 
+  3.8998965958949842`*^9}},ExpressionUUID->"a8b864d0-8d07-4797-a5e3-\
+df5dc6335d0f"]
+},
+WindowSize->{773, 789},
+WindowMargins->{{226.5, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"f9ddcd51-cc12-4165-9bf3-1c40dbc13ebf"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 157, 3, 67, "Section",ExpressionUUID->"9d5feb63-170b-4fa1-bdcc-6bd7628dfda8"],
+Cell[740, 27, 222, 3, 28, "Input",ExpressionUUID->"f03a1f8e-3674-4b92-b750-0e18baf60ff3"],
+Cell[CellGroupData[{
+Cell[987, 34, 203, 3, 28, "Input",ExpressionUUID->"1127ab6f-7642-4bde-87fe-a7a3d4e230b5"],
+Cell[1193, 39, 1157, 28, 79, "Output",ExpressionUUID->"48848eb9-20cd-4f6e-8f76-e2b4059c52d8"]
+}, Open  ]]
+}, Open  ]],
+Cell[2377, 71, 239, 4, 67, "Section",ExpressionUUID->"a8b864d0-8d07-4797-a5e3-df5dc6335d0f"]
+}
+]
+*)
+

@@ -1,0 +1,469 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24368,        459]
+NotebookOptionsPosition[     22960,        429]
+NotebookOutlinePosition[     23362,        445]
+CellTagsIndexPosition[     23319,        442]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"Needs", "[", "Theorema`", "]"}]], "Input",
+ CellChangeTimes->{{3.8998683808671913`*^9, 3.8998683856782594`*^9}, {
+  3.8998740734563465`*^9, 3.89987410992342*^9}},
+ EmphasizeSyntaxErrors->
+  True,ExpressionUUID->"9cdff3a3-0335-480b-b4a1-2f3497222c61"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Syntax", "tsntxi", 
+   "\"\\\"\\!\\(\\*RowBox[{\\\"Needs\\\", \\\"[\\\", \\\"Theorema`\\\", \\\"]\
+\\\"}]\\)\\\" is incomplete; more input is needed.\\!\\(\\*RowBox[{\\\"\\\\\\\
+\"\\\\\\\"\\\"}]\\)\"", 2, 3, 4, 33709766635419400598, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8998741046876574`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"2392ecfe-9387-4066-9a46-1c4d95ce5bea"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sort", "@", 
+  RowBox[{"DeleteDuplicates", "@", 
+   RowBox[{"Join", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"FileBaseName", "[", "#", "]"}], "<>", "\"\<`\>\""}], "&"}], "/@", 
+      RowBox[{"FileNames", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"WordCharacter", ".."}], "~~", 
+         RowBox[{"(", 
+          RowBox[{"\"\<.m\>\"", "|", "\"\<.wl\>\""}], ")"}]}], ",", "$Path"}],
+        "]"}]}], ",", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"Flatten", "@", 
+        RowBox[{"Lookup", "[", 
+         RowBox[{
+          RowBox[{"PacletInformation", "/@", 
+           RowBox[{"PacletFind", "[", "]"}]}], ",", "\"\<Context\>\""}], 
+         "]"}]}], ",", 
+       RowBox[{"StringMatchQ", "[", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"WordCharacter", "|", "\"\<`\>\""}], ")"}], ".."}], "]"}]}],
+       "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.8998741900102997`*^9, 3.8998741900149345`*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"79e82475-91e5-4bf5-b44b-1e594081675d"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "PacletInformation", "piobs", 
+   "\"The experimental function PacletInformation is now obsolete. Use \
+Information[PacletObject[\\\"pacletname\\\"]], or property-extraction syntax \
+like PacletObject[\\\"pacletname\\\"][\\\"prop\\\"] or \
+PacletObject[\\\"pacletname\\\"][All] instead.\"", 2, 3, 5, 
+   33709766635419400598, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8998741907502604`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"eacabd62-3104-41e4-8503-b774863a0932"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "PacletInformation", "piobs", 
+   "\"The experimental function PacletInformation is now obsolete. Use \
+Information[PacletObject[\\\"pacletname\\\"]], or property-extraction syntax \
+like PacletObject[\\\"pacletname\\\"][\\\"prop\\\"] or \
+PacletObject[\\\"pacletname\\\"][All] instead.\"", 2, 3, 6, 
+   33709766635419400598, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8998741907823687`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"ed59174a-4155-4eea-b4a2-d6c681d7a1f0"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "PacletInformation", "piobs", 
+   "\"The experimental function PacletInformation is now obsolete. Use \
+Information[PacletObject[\\\"pacletname\\\"]], or property-extraction syntax \
+like PacletObject[\\\"pacletname\\\"][\\\"prop\\\"] or \
+PacletObject[\\\"pacletname\\\"][All] instead.\"", 2, 3, 7, 
+   33709766635419400598, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.899874190800214*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"ca37033f-ef38-45e0-b055-fa238ff5b871"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "General", "stop", 
+   "\"Further output of \\!\\(\\*StyleBox[RowBox[{\\\"PacletInformation\\\", \
+\\\"::\\\", \\\"piobs\\\"}], \\\"MessageName\\\"]\\) will be suppressed \
+during this calculation.\"", 2, 3, 8, 33709766635419400598, "Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.8998741908201504`*^9},
+ CellLabel->
+  "During evaluation of \
+In[3]:=",ExpressionUUID->"a8014b79-bb6a-4a56-afc9-20491e0854f7"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"AnatomyGraphics3D`\"\>", 
+   ",", "\<\"AnatomyGraphics3DLoader`\"\>", ",", "\<\"ArchiveTools`\"\>", 
+   ",", "\<\"ArduinoCompile`\"\>", ",", "\<\"ArduinoLink`\"\>", 
+   ",", "\<\"ArduinoUpload`\"\>", ",", "\<\"AR`Load`\"\>", 
+   ",", "\<\"Arxiv`\"\>", ",", "\<\"ArXivLoad`\"\>", 
+   ",", "\<\"AstroData`\"\>", ",", "\<\"AstronomyConvenienceFunctions`\"\>", 
+   ",", "\<\"AstronomyConvenienceFunctionsLoader`\"\>", 
+   ",", "\<\"AudioFileStreamTools`\"\>", ",", "\<\"Authentication`\"\>", 
+   ",", "\<\"AutomaticDifferentiation`\"\>", ",", "\<\"AVRCCompiler`\"\>", 
+   ",", "\<\"AWSClient`\"\>", ",", "\<\"AWSServiceConnectionLoader`\"\>", 
+   ",", "\<\"AzureClient`\"\>", ",", "\<\"BarcodeTools`\"\>", 
+   ",", "\<\"Benchmarking`\"\>", ",", "\<\"BingSearch`\"\>", 
+   ",", "\<\"BingSearchFunctions`\"\>", ",", "\<\"BingSearchLoad`\"\>", 
+   ",", "\<\"Biology`\"\>", ",", "\<\"BLASLayer`\"\>", 
+   ",", "\<\"Blockchain`\"\>", ",", "\<\"CacheManager`\"\>", 
+   ",", "\<\"CCodeGenerator`\"\>", ",", "\<\"CCompilerDriver`\"\>", 
+   ",", "\<\"ChannelFramework`\"\>", ",", "\<\"ChannelFrameworkLoader`\"\>", 
+   ",", "\<\"ChannelFrameworkMQTT`\"\>", ",", "\<\"CharityEngine`\"\>", 
+   ",", "\<\"CharityEngineLoader`\"\>", ",", "\<\"ChatTools`\"\>", 
+   ",", "\<\"ChatToolsLoader`\"\>", ",", "\<\"Chemistry`\"\>", 
+   ",", "\<\"ChemSpider`\"\>", ",", "\<\"ChemSpiderLoad`\"\>", 
+   ",", "\<\"CloudDialogs`\"\>", ",", "\<\"CloudExpression`\"\>", 
+   ",", "\<\"CloudExpressionLoader`\"\>", ",", "\<\"CloudLMClient`\"\>", 
+   ",", "\<\"CloudObject`\"\>", ",", "\<\"CloudObjectLoader`\"\>", 
+   ",", "\<\"CodeFormatter`\"\>", ",", "\<\"CodeInspector`\"\>", 
+   ",", "\<\"CodeParser`\"\>", ",", "\<\"ColorPaletteResource`\"\>", 
+   ",", "\<\"Compile`\"\>", ",", "\<\"CompileAST`\"\>", 
+   ",", "\<\"CompiledCompiler`\"\>", ",", "\<\"CompiledComponents`\"\>", 
+   ",", "\<\"CompiledFunctionTools`\"\>", ",", "\<\"CompiledLayerTools`\"\>", 
+   ",", "\<\"CompiledLibrary`\"\>", ",", "\<\"CompilerCoreRuntime`\"\>", 
+   ",", "\<\"CompilerSymbols`\"\>", ",", "\<\"CompileUtilities`\"\>", 
+   ",", "\<\"CouenneLink`\"\>", ",", "\<\"CrossRef`\"\>", 
+   ",", "\<\"CrossRefLoad`\"\>", ",", "\<\"Cryptography`\"\>", 
+   ",", "\<\"CSGRegion`Load`\"\>", ",", "\<\"CUDACompileTools`\"\>", 
+   ",", "\<\"CUDALink`\"\>", ",", "\<\"CURLLink`\"\>", 
+   ",", "\<\"CVXLink`\"\>", ",", "\<\"DAALLink`\"\>", 
+   ",", "\<\"DatabaseLink`\"\>", ",", "\<\"Databases`\"\>", 
+   ",", "\<\"DatabasesLoader`\"\>", ",", "\<\"DatabasesStub`\"\>", 
+   ",", "\<\"DataDropClient`\"\>", ",", "\<\"DataDropClientLoader`\"\>", 
+   ",", "\<\"DataResource`\"\>", ",", "\<\"DataResourceLoader`\"\>", 
+   ",", "\<\"Dataset`\"\>", ",", "\<\"DatasetLoader`\"\>", 
+   ",", "\<\"DataStructure`\"\>", ",", "\<\"DataStructureComponents`\"\>", 
+   ",", "\<\"DefinitionNotebookClient`\"\>", 
+   ",", "\<\"DefinitionNotebookClientLoader`\"\>", 
+   ",", "\<\"DemoChannels`Oneliner`\"\>", ",", "\<\"DemoChannels`WIM`\"\>", 
+   ",", "\<\"DemonstrationsTools`\"\>", 
+   ",", "\<\"DemonstrationsToolsLoader`\"\>", ",", "\<\"Developer`\"\>", 
+   ",", "\<\"DICOMTools`\"\>", ",", "\<\"DocumentationBuild`\"\>", 
+   ",", "\<\"DocumentationSearch`\"\>", ",", "\<\"DocumentationTools`\"\>", 
+   ",", "\<\"Dropbox`\"\>", ",", "\<\"DropboxLoad`\"\>", ",", "\<\"ELP`\"\>", 
+   ",", "\<\"EmbedCode`\"\>", ",", "\<\"EmbedCodeLoader`\"\>", 
+   ",", "\<\"EmbeddedService`\"\>", ",", "\<\"EmbeddedServiceLoader`\"\>", 
+   ",", "\<\"EmbeddedSystemsTools`\"\>", ",", "\<\"EntityFramework`\"\>", 
+   ",", "\<\"ErrorHandling`\"\>", ",", "\<\"Experimental`\"\>", 
+   ",", "\<\"ExternalEvaluate`\"\>", ",", "\<\"ExternalEvaluateJava`\"\>", 
+   ",", "\<\"ExternalEvaluateJulia`\"\>", 
+   ",", "\<\"ExternalEvaluateJupyter`\"\>", 
+   ",", "\<\"ExternalEvaluateNodeJS`\"\>", 
+   ",", "\<\"ExternalEvaluateOctave`\"\>", 
+   ",", "\<\"ExternalEvaluatePython`\"\>", ",", "\<\"ExternalEvaluateR`\"\>", 
+   ",", "\<\"ExternalEvaluateRuby`\"\>", 
+   ",", "\<\"ExternalEvaluateShell`\"\>", ",", "\<\"ExternalEvaluateSQL`\"\>",
+    ",", "\<\"ExternalStorage`\"\>", ",", "\<\"Facebook`\"\>", 
+   ",", "\<\"FacebookFunctions`\"\>", ",", "\<\"FacebookLoad`\"\>", 
+   ",", "\<\"Factual`\"\>", ",", "\<\"FactualFunctions`\"\>", 
+   ",", "\<\"FactualLoad`\"\>", ",", "\<\"FDLLink`\"\>", 
+   ",", "\<\"FederalReserveEconomicData`\"\>", 
+   ",", "\<\"FederalReserveEconomicDataLoad`\"\>", 
+   ",", "\<\"FFmpegTools`\"\>", ",", "\<\"FFmpegTools`Audio`\"\>", 
+   ",", "\<\"FFmpegTools`Common`\"\>", ",", "\<\"FFmpegTools`FE`\"\>", 
+   ",", "\<\"FFmpegTools`Video`\"\>", ",", "\<\"Firmata`\"\>", 
+   ",", "\<\"Fitbit`\"\>", ",", "\<\"FitbitFunctions`\"\>", 
+   ",", "\<\"FitbitLoad`\"\>", ",", "\<\"Flickr`\"\>", 
+   ",", "\<\"FlickrLoad`\"\>", ",", "\<\"ForeignFunctionInterface`\"\>", 
+   ",", "\<\"FormNotebook`\"\>", ",", "\<\"Forms`\"\>", 
+   ",", "\<\"FormulaData`\"\>", ",", "\<\"FormulaDataLoader`\"\>", 
+   ",", "\<\"FrontEndGraphics`\"\>", ",", "\<\"FunctionResource`\"\>", 
+   ",", "\<\"FunctionResourceLoader`\"\>", ",", "\<\"GDALTools`\"\>", 
+   ",", "\<\"GeneralUtilities`\"\>", ",", "\<\"GeneralUtilitiesLoader`\"\>", 
+   ",", "\<\"GeoFieldModelData`\"\>", ",", "\<\"GeoFieldModelDataLoader`\"\>",
+    ",", "\<\"GeometrySearch`\"\>", ",", "\<\"GeometrySearchLoader`\"\>", 
+   ",", "\<\"GeoOrientation`\"\>", ",", "\<\"GEOSLink`\"\>", 
+   ",", "\<\"GeoTools`\"\>", ",", "\<\"GIFTools`\"\>", 
+   ",", "\<\"GoogleAnalytics`\"\>", ",", "\<\"GoogleAnalyticsLoad`\"\>", 
+   ",", "\<\"GoogleCalendar`\"\>", ",", "\<\"GoogleCalendarLoad`\"\>", 
+   ",", "\<\"GoogleContacts`\"\>", ",", "\<\"GoogleContactsLoad`\"\>", 
+   ",", "\<\"GoogleCustomSearch`\"\>", 
+   ",", "\<\"GoogleCustomSearchFunctions`\"\>", 
+   ",", "\<\"GoogleCustomSearchLoad`\"\>", ",", "\<\"GooglePlus`\"\>", 
+   ",", "\<\"GooglePlusLoad`\"\>", ",", "\<\"GoogleSpeech`\"\>", 
+   ",", "\<\"GoogleSpeechLoader`\"\>", ",", "\<\"GoogleTranslate`\"\>", 
+   ",", "\<\"GoogleTranslateFunctions`\"\>", 
+   ",", "\<\"GoogleTranslateLoad`\"\>", ",", "\<\"GPUTools`\"\>", 
+   ",", "\<\"GraphStore`\"\>", ",", "\<\"GurobiLink`\"\>", 
+   ",", "\<\"HDF5Tools`\"\>", ",", "\<\"HTTPClient`\"\>", 
+   ",", "\<\"HTTPHandling`\"\>", ",", "\<\"HTTPLink`\"\>", 
+   ",", "\<\"HTTPLinkLoader`\"\>", ",", "\<\"HumanGrowthData`\"\>", 
+   ",", "\<\"HumanGrowthDataLoader`\"\>", ",", "\<\"Iconize`\"\>", 
+   ",", "\<\"IconizeLoader`\"\>", ",", "\<\"ImageFileTools`\"\>", 
+   ",", "\<\"ImageFileTools`HEIF`\"\>", 
+   ",", "\<\"ImageFileTools`OpenEXR`\"\>", ",", "\<\"ImageFileTools`Raw`\"\>",
+    ",", "\<\"ImageFileTools`RLE`\"\>", ",", "\<\"ImageFileTools`WebP`\"\>", 
+   ",", "\<\"IMAPLink`\"\>", ",", "\<\"IMAQTools`\"\>", 
+   ",", "\<\"ImportExport`Load`\"\>", ",", "\<\"InflationAdjust`\"\>", 
+   ",", "\<\"InflationAdjustLoader`\"\>", ",", "\<\"init`\"\>", 
+   ",", "\<\"Instagram`\"\>", ",", "\<\"InstagramLoad`\"\>", 
+   ",", "\<\"Instrumentation`\"\>", ",", "\<\"IntegratedServices`\"\>", 
+   ",", "\<\"IntegratedServicesLoader`\"\>", ",", "\<\"Interpreter`\"\>", 
+   ",", "\<\"IPFS`\"\>", ",", "\<\"IPFSLoad`\"\>", ",", "\<\"IPOPTLink`\"\>", 
+   ",", "\<\"ITKLink`\"\>", ",", "\<\"JavaGraphics`\"\>", 
+   ",", "\<\"JLink`\"\>", ",", "\<\"JSONTools`\"\>", 
+   ",", "\<\"KernelObjectsStartup`\"\>", ",", "\<\"KeychainLinkStartup`\"\>", 
+   ",", "\<\"LightGBMLink`\"\>", ",", "\<\"LinearAlgebra`\"\>", 
+   ",", "\<\"LinkedIn`\"\>", ",", "\<\"LinkedInLoad`\"\>", 
+   ",", "\<\"ListableFunctions`\"\>", ",", "\<\"LLVMCompileTools`\"\>", 
+   ",", "\<\"LLVMLink`\"\>", ",", "\<\"LLVMTools`\"\>", 
+   ",", "\<\"LSPServer`\"\>", ",", "\<\"MachineLearning`\"\>", 
+   ",", "\<\"MachineLearningLoader`\"\>", ",", "\<\"Macros`\"\>", 
+   ",", "\<\"MacrosLoader`\"\>", ",", "\<\"MailChimp`\"\>", 
+   ",", "\<\"MailChimpLoad`\"\>", ",", "\<\"MailLink`\"\>", 
+   ",", "\<\"MathematicalFunctionData`\"\>", 
+   ",", "\<\"MathematicalFunctionDataLoader`\"\>", 
+   ",", "\<\"MathematicalFunctions`\"\>", ",", "\<\"MATTools`\"\>", 
+   ",", "\<\"MicrocontrollerKit`\"\>", ",", "\<\"MicrosoftTranslator`\"\>", 
+   ",", "\<\"MicrosoftTranslatorFunctions`\"\>", 
+   ",", "\<\"MicrosoftTranslatorLoad`\"\>", ",", "\<\"MIDITools`\"\>", 
+   ",", "\<\"MIMETools`\"\>", ",", "\<\"Mixpanel`\"\>", 
+   ",", "\<\"MixpanelFunctions`\"\>", ",", "\<\"MixpanelLoad`\"\>", 
+   ",", "\<\"MobileMessaging`\"\>", ",", "\<\"MobileMessagingLoader`\"\>", 
+   ",", "\<\"MongoLink`\"\>", ",", "\<\"MOSEKLink`\"\>", 
+   ",", "\<\"MQTTLink`\"\>", ",", "\<\"MUnit`\"\>", 
+   ",", "\<\"MUnitLoader`\"\>", ",", "\<\"MXNetLink`\"\>", 
+   ",", "\<\"NaturalLanguage`\"\>", ",", "\<\"NaturalLanguageLoader`\"\>", 
+   ",", "\<\"NaturalLanguageProcessing`\"\>", 
+   ",", "\<\"NaturalLanguageProcessingLoader`\"\>", 
+   ",", "\<\"NDSolve`FEM`\"\>", ",", "\<\"NetCDFTools`\"\>", 
+   ",", "\<\"NETLink`\"\>", ",", "\<\"NeuralFunctions`\"\>", 
+   ",", "\<\"NeuralNetResource`\"\>", ",", "\<\"NeuralNetResourceLoader`\"\>",
+    ",", "\<\"NeuralNetworks`\"\>", ",", "\<\"NotebookTemplating`\"\>", 
+   ",", "\<\"NumericalCompiledComponents`\"\>", 
+   ",", "\<\"NumericalFunctionCompile`\"\>", 
+   ",", "\<\"NumericArrayUtilities`\"\>", ",", "\<\"NurbsRegion`Load`\"\>", 
+   ",", "\<\"OAuth`\"\>", ",", "\<\"OAuthLoader`\"\>", 
+   ",", "\<\"OAuthSigning`\"\>", ",", "\<\"ONNXRuntimeLink`\"\>", 
+   ",", "\<\"ONNXUtilities`\"\>", ",", "\<\"OpenAI`\"\>", 
+   ",", "\<\"OpenAILoad`\"\>", ",", "\<\"OpenAPITools`\"\>", 
+   ",", "\<\"OpenCLLink`\"\>", ",", "\<\"OpenCVLink`\"\>", 
+   ",", "\<\"OpenLibrary`\"\>", ",", "\<\"OpenLibraryFunctions`\"\>", 
+   ",", "\<\"OpenLibraryLoad`\"\>", ",", "\<\"OpenPHACTS`\"\>", 
+   ",", "\<\"OpenPHACTSLoad`\"\>", 
+   ",", "\<\"Optimization`MethodFramework`\"\>", ",", "\<\"OSQPLink`\"\>", 
+   ",", "\<\"PacletManager`\"\>", ",", "\<\"PacletResource`\"\>", 
+   ",", "\<\"PacletResourceLoader`\"\>", ",", "\<\"PacletTools`\"\>", 
+   ",", "\<\"PDEModels`\"\>", ",", "\<\"PDFTools`\"\>", ",", "\<\"PLI`\"\>", 
+   ",", "\<\"PLILoader`\"\>", ",", "\<\"Polygons`Load`\"\>", 
+   ",", "\<\"PredictiveInterface`\"\>", ",", "\<\"PresenterTools`\"\>", 
+   ",", "\<\"ProcessLink`\"\>", ",", "\<\"ProcessLinkLoader`\"\>", 
+   ",", "\<\"PromptResource`\"\>", ",", "\<\"ProtobufLink`\"\>", 
+   ",", "\<\"ProvisionPython`\"\>", ",", "\<\"PubChem`\"\>", 
+   ",", "\<\"PubChemLoad`\"\>", ",", "\<\"PubMed`\"\>", 
+   ",", "\<\"PubMedLoad`\"\>", ",", "\<\"Pushbullet`\"\>", 
+   ",", "\<\"PushbulletAPIFunctions`\"\>", ",", "\<\"PushbulletLoad`\"\>", 
+   ",", "\<\"QuantityUnits`\"\>", ",", "\<\"QuantityUnitsLoader`\"\>", 
+   ",", "\<\"QuestionFramework`\"\>", ",", "\<\"Reddit`\"\>", 
+   ",", "\<\"RedditFunctions`\"\>", ",", "\<\"RedditLoad`\"\>", 
+   ",", "\<\"Regions`Load`\"\>", ",", "\<\"ReinforcementLearning`\"\>", 
+   ",", "\<\"RemoteBatchSubmit`\"\>", ",", "\<\"RemoteBatchSubmitLoader`\"\>",
+    ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`Actions`\"\>", 
+   ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`BatchAPI`Jobs`\"\>", 
+   ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`BatchAPI`Tasks`\"\>", 
+   ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`BlobStorageAPI`Blobs`\"\>\
+", ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`BlobStorageAPI`Containers`\
+\"\>", ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`Licensing`\"\>", 
+   ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`Properties`\"\>", 
+   ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`Utility`\"\>", 
+   ",", "\<\"RemoteBatchSubmit`Providers`AzureBatch`Validation`\"\>", 
+   ",", "\<\"RemoteEvaluateStartup`\"\>", 
+   ",", "\<\"ResourceFunctionHelpers`\"\>", 
+   ",", "\<\"ResourceSystemClient`\"\>", 
+   ",", "\<\"ResourceSystemClientLoader`\"\>", ",", "\<\"RLink`\"\>", 
+   ",", "\<\"RLinkLoader`\"\>", ",", "\<\"RobotTools`\"\>", 
+   ",", "\<\"RobotToolsLoader`\"\>", ",", "\<\"RunKeeper`\"\>", 
+   ",", "\<\"RunKeeperLoad`\"\>", ",", "\<\"S3Link`\"\>", 
+   ",", "\<\"SCSLink`\"\>", ",", "\<\"SDPLink`\"\>", ",", "\<\"SeatGeek`\"\>",
+    ",", "\<\"SeatGeekLoad`\"\>", ",", "\<\"SecureShellLink`\"\>", 
+   ",", "\<\"SemanticImport`\"\>", ",", "\<\"SemanticImportLoader`\"\>", 
+   ",", "\<\"ServiceDeploy`\"\>", ",", "\<\"ServiceDeployLoader`\"\>", 
+   ",", "\<\"SketchTemplate`\"\>", ",", "\<\"SMTPLink`\"\>", 
+   ",", "\<\"SMTPLinkLoader`\"\>", ",", "\<\"SoundFileTools`\"\>", 
+   ",", "\<\"SpeechServices`\"\>", ",", "\<\"SpeechSynthesisTools`\"\>", 
+   ",", "\<\"SpeechVocoderTools`\"\>", ",", "\<\"SpellCorrect`\"\>", 
+   ",", "\<\"SpellCorrectLoader`\"\>", ",", "\<\"SpellingData`\"\>", 
+   ",", "\<\"SpellingDataLoader`\"\>", ",", "\<\"SPICELink`\"\>", 
+   ",", "\<\"SQLiteLink`\"\>", ",", "\<\"StandardOceanData`\"\>", 
+   ",", "\<\"StandardOceanDataLoader`\"\>", ",", "\<\"StartupLoad`\"\>", 
+   ",", "\<\"StatFileTools`\"\>", ",", "\<\"StoppingPowerData`\"\>", 
+   ",", "\<\"StoppingPowerDataLoader`\"\>", ",", "\<\"Streaming`\"\>", 
+   ",", "\<\"StreamingLoader`\"\>", ",", "\<\"StreamLink`\"\>", 
+   ",", "\<\"SurveyMonkey`\"\>", ",", "\<\"SurveyMonkeyLoad`\"\>", 
+   ",", "\<\"SVTools`\"\>", ",", "\<\"SymbolicC`\"\>", 
+   ",", "\<\"SymbolicMachineLearning`\"\>", 
+   ",", "\<\"SymbolicMachineLearningLoader`\"\>", 
+   ",", "\<\"SystemInstall`\"\>", ",", "\<\"SystemInstallLoader`\"\>", 
+   ",", "\<\"SystemTest`\"\>", ",", "\<\"SystemTools`\"\>", 
+   ",", "\<\"Templating`\"\>", ",", "\<\"Terminal`\"\>", 
+   ",", "\<\"TesseractTools`\"\>", ",", "\<\"TetGenLink`\"\>", 
+   ",", "\<\"TextSearch`\"\>", ",", "\<\"TextSearchLoader`\"\>", 
+   ",", "\<\"TextTranslation`\"\>", ",", "\<\"TextTranslationLoader`\"\>", 
+   ",", "\<\"TINSLink`\"\>", ",", "\<\"ToolbarSupport`\"\>", 
+   ",", "\<\"Transmogrify`\"\>", ",", "\<\"TravelDirectionsClient`\"\>", 
+   ",", "\<\"TravelDirectionsClientLoader`\"\>", ",", "\<\"TriangleLink`\"\>",
+    ",", "\<\"Twilio`\"\>", ",", "\<\"TwilioFunctions`\"\>", 
+   ",", "\<\"TwilioLoad`\"\>", ",", "\<\"TwilioSendMessage`\"\>", 
+   ",", "\<\"Twitter`\"\>", ",", "\<\"TwitterFunctions`\"\>", 
+   ",", "\<\"TwitterLoad`\"\>", ",", "\<\"TypeFramework`\"\>", 
+   ",", "\<\"TypeSystem`\"\>", ",", "\<\"TypeSystemLoader`\"\>", 
+   ",", "\<\"UnitTable`\"\>", ",", "\<\"UnityLink`\"\>", 
+   ",", "\<\"URLUtilities`\"\>", ",", "\<\"VernierLink`\"\>", 
+   ",", "\<\"VSOP87`\"\>", ",", "\<\"WASLoader`\"\>", 
+   ",", "\<\"WebAudioSearch`\"\>", ",", "\<\"WebAudioSearchLoader`\"\>", 
+   ",", "\<\"WebRTCLink`\"\>", ",", "\<\"WebSearch`\"\>", 
+   ",", "\<\"WebSearchLoader`\"\>", ",", "\<\"WebUnit`\"\>", 
+   ",", "\<\"Wikipedia`\"\>", ",", "\<\"WikipediaData`\"\>", 
+   ",", "\<\"WikipediaDataLoader`\"\>", ",", "\<\"WikipediaFunctions`\"\>", 
+   ",", "\<\"WikipediaLoad`\"\>", ",", "\<\"WolframAlphaClient`\"\>", 
+   ",", "\<\"WolframAppCatalog`\"\>", 
+   ",", "\<\"WolframApplicationServer`\"\>", ",", "\<\"Wolfram`Chatbook`\"\>",
+    ",", "\<\"Wolfram`Chatbook`BeginStartup`\"\>", 
+   ",", "\<\"Wolfram`Chatbook`EndStartup`\"\>", 
+   ",", "\<\"WolframChatbookInstaller`\"\>", 
+   ",", "\<\"WolframChemistryLibrary`\"\>", ",", "\<\"WolframGNL`\"\>", 
+   ",", "\<\"Wolfram`LLMFunctions`\"\>", ",", "\<\"WolframNTL`\"\>", 
+   ",", "\<\"WolframScript`\"\>", ",", "\<\"WordCloudPatch`\"\>", 
+   ",", "\<\"WordCloudPatchImpl`\"\>", ",", "\<\"WordFrequency`\"\>", 
+   ",", "\<\"WordFrequencyLoader`\"\>", ",", "\<\"WSM`\"\>", 
+   ",", "\<\"WSMLink`\"\>", ",", "\<\"WSMLoader`\"\>", 
+   ",", "\<\"WSTPServerTools`\"\>", ",", "\<\"XLTools`\"\>", 
+   ",", "\<\"XMPTools`Helpers`\"\>", 
+   ",", "\<\"XMPTools`Metadata`Domains`Exif`\"\>", 
+   ",", "\<\"XMPTools`Metadata`Domains`IPTC`\"\>", 
+   ",", "\<\"XMPTools`Metadata`Domains`XMP`\"\>", 
+   ",", "\<\"XMPTools`Wrappers`\"\>", ",", "\<\"XpressLink`\"\>", 
+   ",", "\<\"Yelp`\"\>", ",", "\<\"YelpFunctions`\"\>", 
+   ",", "\<\"YelpLoad`\"\>", ",", "\<\"ZeroMQLink`\"\>", 
+   ",", "\<\"ZeroMQLinkLoader`\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.8998741911802826`*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"4d724113-b1bc-4131-828f-5c68fc58a4f2"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Path"], "Input",
+ CellChangeTimes->{{3.899883460057972*^9, 3.8998834637358403`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"cc26b89d-c7f8-4b70-b6e4-73c697753ad1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"\<\"C:\\\\Users\\\\jackh\\\\AppData\\\\Roaming\\\\Mathematica\\\\\
+DocumentationIndices\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\SystemFiles\\\\Links\"\>", 
+   ",", "\<\"C:\\\\Users\\\\jackh\\\\AppData\\\\Roaming\\\\Mathematica\\\\\
+Kernel\"\>", 
+   ",", "\<\"C:\\\\Users\\\\jackh\\\\AppData\\\\Roaming\\\\Mathematica\\\\\
+Autoload\"\>", 
+   ",", "\<\"C:\\\\Users\\\\jackh\\\\AppData\\\\Roaming\\\\Mathematica\\\\\
+Applications\"\>", ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Kernel\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\ProgramData\\\\Mathematica\\\\Applications\"\>", 
+   ",", "\<\".\"\>", ",", "\<\"C:\\\\Users\\\\jackh\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\AddOns\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\SystemFiles\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\AddOns\\\\Autoload\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\AddOns\\\\Applications\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\AddOns\\\\ExtraPackages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\SystemFiles\\\\Kernel\\\\Packages\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\Documentation\\\\English\\\\System\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\SystemFiles\\\\Data\\\\ICC\"\>", 
+   ",", "\<\"C:\\\\Program Files\\\\Wolfram Research\\\\Mathematica\\\\13.3\\\
+\\Documentation\\\\ChineseSimplified\\\\System\\\\\"\>"}], "}"}]], "Output",
+ CellChangeTimes->{3.8998834641055183`*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"8a512a1c-7255-42da-ae39-0beda9f24ed2"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Theorema`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8998836115362186`*^9, 3.899883633872056*^9}},
+ CellLabel->"In[5]:=",ExpressionUUID->"0cd7f76e-2be7-4710-89c4-03ac00a33132"]
+},
+WindowSize->{571, 627.5},
+WindowMargins->{{333, Automatic}, {52.5, Automatic}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"1ed9b8f0-48a4-46f4-ba60-24bfd802c487"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 274, 5, 28, "Input",ExpressionUUID->"9cdff3a3-0335-480b-b4a1-2f3497222c61"],
+Cell[857, 29, 463, 10, 28, "Message",ExpressionUUID->"2392ecfe-9387-4066-9a46-1c4d95ce5bea"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1357, 44, 1090, 30, 106, "Input",ExpressionUUID->"79e82475-91e5-4bf5-b44b-1e594081675d"],
+Cell[2450, 76, 555, 12, 64, "Message",ExpressionUUID->"eacabd62-3104-41e4-8503-b774863a0932"],
+Cell[3008, 90, 555, 12, 64, "Message",ExpressionUUID->"ed59174a-4155-4eea-b4a2-d6c681d7a1f0"],
+Cell[3566, 104, 553, 12, 64, "Message",ExpressionUUID->"ca37033f-ef38-45e0-b055-fa238ff5b871"],
+Cell[4122, 118, 462, 10, 46, "Message",ExpressionUUID->"a8014b79-bb6a-4a56-afc9-20491e0854f7"],
+Cell[4587, 130, 15957, 248, 2871, "Output",ExpressionUUID->"4d724113-b1bc-4131-828f-5c68fc58a4f2"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20581, 383, 177, 2, 28, "Input",ExpressionUUID->"cc26b89d-c7f8-4b70-b6e4-73c697753ad1"],
+Cell[20761, 387, 1960, 34, 527, "Output",ExpressionUUID->"8a512a1c-7255-42da-ae39-0beda9f24ed2"]
+}, Open  ]],
+Cell[22736, 424, 220, 3, 57, "Input",ExpressionUUID->"0cd7f76e-2be7-4710-89c4-03ac00a33132"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
