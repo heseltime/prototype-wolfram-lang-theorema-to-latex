@@ -1,0 +1,434 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     17459,        426]
+NotebookOptionsPosition[     14887,        377]
+NotebookOutlinePosition[     15290,        393]
+CellTagsIndexPosition[     15247,        390]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Prototype (#0 with only File Streams) ", "Title",
+ CellChangeTimes->{{3.9004895664540796`*^9, 3.9004895722834864`*^9}, {
+  3.9005684276378317`*^9, 
+  3.9005684342088785`*^9}},ExpressionUUID->"f28c367b-8e17-4350-8323-\
+eee50ffed7dc"],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+   RowBox[{
+   "generates", " ", "two", " ", "tex", " ", "files", " ", "on", " ", "level",
+     " ", "of", " ", "the", " ", "original", " ", "notebook", " ", "passed", 
+    " ", "to", " ", "the", " ", "main", " ", "program"}], ",", " ", 
+   RowBox[{"the", " ", "convert", " ", 
+    RowBox[{"function", ":", " ", 
+     RowBox[{"hard", " ", "coded", " ", "include", " ", "approach"}]}]}], ",",
+    " ", 
+   RowBox[{
+    RowBox[{
+    "templating", " ", "would", " ", "be", " ", "needed", " ", "to", " ", 
+     "make", " ", 
+     RowBox[{"dynamic", ".", " ", "But"}], " ", 
+     RowBox[{"then", ":", " ", 
+      RowBox[{
+      "why", " ", "not", " ", "use", " ", "one", " ", "template", " ", "and", 
+       " ", "include", " ", 
+       RowBox[{"the", " ", ".", "tex"}], " ", "output", " ", "of", " ", "the",
+        " ", "write", " ", "function", " ", "via", " ", "templating", " ", 
+       RowBox[{"directly", ".", " ", "see"}], " ", "https"}], ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"chat", ".", "openai", ".", "com"}], "/", "share"}], "/", 
+       "2"}], "c38ba89"}], "-", "f9d5", "-", 
+     RowBox[{"453", "e"}], "-", "ae6a", "-", "f14c2740adf4"}]}]}], " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.9005722742858543`*^9, 
+  3.9005723671618495`*^9}},ExpressionUUID->"a1ea7d68-d6b9-49a0-a90b-\
+6fef4434e88f"],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.899896539120264*^9, 3.8998965411652017`*^9}, {
+  3.899970955705423*^9, 3.899970964507726*^9}, {3.8999740128675346`*^9, 
+  3.899974027625018*^9}, {3.9005585486838365`*^9, 
+  3.9005585491574273`*^9}},ExpressionUUID->"95e9ad1c-1c86-49cd-9b30-\
+ec6fbdf7fbdb"],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<Theorema`\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8998964805371075`*^9, 3.8998964876102395`*^9}},
+ CellLabel->
+  "In[266]:=",ExpressionUUID->"87553d2d-04ac-42d9-965e-2bc09fb19c7a"]
+}, Open  ]],
+
+Cell["Functions", "Section",
+ CellChangeTimes->{{3.900558578251251*^9, 
+  3.900558581874033*^9}},ExpressionUUID->"ca42add5-145c-4533-9138-\
+cd8570f4b57c"],
+
+Cell[CellGroupData[{
+
+Cell["Pattern Matching", "Chapter",
+ CellChangeTimes->{{3.900489534688995*^9, 
+  3.9004895370729337`*^9}},ExpressionUUID->"a4d41a30-90d5-4732-bf57-\
+f97609ad7b4f"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"patternMatch", "[", 
+   RowBox[{"Notebook", "[", 
+    RowBox[{"l_List", ",", "___"}], "]"}], "]"}], " ", ":=", " ", 
+  RowBox[{"StringJoin", "[", 
+   RowBox[{"ToString", "/@", 
+    RowBox[{"patternMatch", "/@", "l"}]}], "]"}]}], "\n", 
+ RowBox[{" ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"recursive", " ", "call"}], " ", "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.8999732932410145`*^9, 3.899973349383051*^9}, {
+   3.8999733879126205`*^9, 3.899973400686472*^9}, 3.8999737708950577`*^9, {
+   3.8999738220561876`*^9, 3.899973871178363*^9}, {3.8999744784962325`*^9, 
+   3.8999744822542934`*^9}, {3.9005608630944786`*^9, 
+   3.9005608833163943`*^9}, {3.9005609263841686`*^9, 3.900560936890711*^9}, {
+   3.9005609689865403`*^9, 3.9005609720386496`*^9}, {3.9005611769105687`*^9, 
+   3.9005611810702953`*^9}, {3.900561306286718*^9, 3.9005613076616983`*^9}},
+ CellLabel->
+  "In[267]:=",ExpressionUUID->"77aece67-a002-47a7-9667-6c83c41f46ff"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"patternMatch", "[", "l_List", "]"}], " ", ":=", " ", 
+  RowBox[{"patternMatch", " ", "/@", " ", "l", 
+   RowBox[{"(*", " ", 
+    RowBox[{"mapping", " ", "same", " ", "level", " ", "elements"}], " ", 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.899973876650453*^9, 3.8999739026439133`*^9}, {
+  3.899974382502966*^9, 3.8999744005915146`*^9}, {3.8999744671356487`*^9, 
+  3.8999744768717813`*^9}, {3.900559979431342*^9, 3.900559985213972*^9}, {
+  3.900560856453295*^9, 3.900560859241784*^9}},
+ CellLabel->
+  "In[268]:=",ExpressionUUID->"20000e86-bf5e-48a2-b322-77c8afbf884b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"patternMatch", "[", "c_Cell", "]"}], " ", ":=", " ", 
+  "\"\<Test\>\"", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"stand", "-", "in"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.8999744056118755`*^9, 3.8999744191011763`*^9}, {
+   3.899974484117432*^9, 3.8999744907636375`*^9}, 3.9005600492960014`*^9, 
+   3.9005608374187183`*^9, 3.9005609485005474`*^9, 3.900560984593687*^9, {
+   3.900561022999883*^9, 3.9005610275895863`*^9}, {3.900561323589775*^9, 
+   3.900561331039463*^9}},
+ CellLabel->
+  "In[269]:=",ExpressionUUID->"76141cb7-c6b5-49aa-9778-1e9540a33f18"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Auxiliary Functions/File Stream", "Chapter",
+ CellChangeTimes->{{3.900489483230646*^9, 3.9004894996691847`*^9}, {
+  3.900489540484929*^9, 
+  3.9004895581520724`*^9}},ExpressionUUID->"71293d8e-bd1a-4936-9139-\
+f70ea48e43a7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"writeToLatexDoc", "[", 
+   RowBox[{"latexPath_", ",", " ", "nbContent_"}], "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "strm", " ", "}"}], ",", 
+    RowBox[{
+     RowBox[{"strm", " ", "=", " ", 
+      RowBox[{"OpenWrite", "[", "latexPath", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"WriteString", "[", 
+      RowBox[{"strm", ",", 
+       RowBox[{"patternMatch", "[", "nbContent", "]"}]}], "]"}], ";", 
+     RowBox[{"Close", "[", "strm", "]"}]}]}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"stream", " ", "handling"}], ",", " ", 
+    RowBox[{
+    "call", " ", "to", " ", "pattern", " ", "Matching", " ", "part"}]}], " ", 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.900484256934987*^9, 3.90048426242336*^9}, {
+  3.90048448867354*^9, 3.9004845498521557`*^9}, {3.900484618646598*^9, 
+  3.900484643326377*^9}, {3.9004848062767773`*^9, 3.900484831222741*^9}, {
+  3.9004848759019947`*^9, 3.900484882286934*^9}, {3.900484914998253*^9, 
+  3.900484951754061*^9}, {3.900485140106798*^9, 3.900485140511073*^9}, {
+  3.9004851933768024`*^9, 3.900485197919389*^9}, {3.9004852321139765`*^9, 
+  3.9004852599993377`*^9}, {3.900486003672398*^9, 3.900486008316514*^9}, {
+  3.9004869200877533`*^9, 3.900486929667097*^9}, {3.9004873083511534`*^9, 
+  3.900487326384937*^9}, {3.9004890427851505`*^9, 3.9004890496989403`*^9}},
+ CellLabel->
+  "In[270]:=",ExpressionUUID->"ca23ca93-3337-4749-9f05-837c82bd4ae1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"getLatexPath", "[", "notebookPath_String", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"directory", ",", "baseName", ",", 
+      RowBox[{"latexExtension", "=", "\"\<.tex\>\""}]}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"directory", "=", 
+      RowBox[{"DirectoryName", "[", "notebookPath", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"baseName", "=", 
+      RowBox[{"FileBaseName", "[", "notebookPath", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"directory", ",", 
+        RowBox[{"baseName", "<>", "latexExtension"}]}], "}"}], "]"}]}]}], 
+   "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"get", " ", "the", " ", "latex", " ", "file", " ", "name", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"the", " ", 
+       RowBox[{"new", " ", ".", "tex"}], " ", "file", " ", "that", " ", "is", 
+       " ", "being", " ", "filled", " ", "with", " ", "the", " ", "nb"}], "-",
+       "content"}], ")"}], " ", "with", " ", "full", " ", "path", " ", "from",
+     " ", "a", " ", "given", " ", "notebook", " ", "path"}], 
+   "*)"}]}]], "Input",
+ CellChangeTimes->{{3.900486817800514*^9, 3.900486817802511*^9}, {
+  3.9004869454858975`*^9, 3.900486958590517*^9}, {3.9005633988313246`*^9, 
+  3.900563414192688*^9}},
+ CellLabel->
+  "In[271]:=",ExpressionUUID->"19b2e7b6-d2fd-4d44-8db3-67435a71bdb3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"getLatexTemplatePath", "[", "notebookPath_String", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"directory", ",", "baseName", ",", 
+      RowBox[{"latexExtension", "=", "\"\<.tex\>\""}]}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"directory", "=", 
+      RowBox[{"DirectoryName", "[", "notebookPath", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"baseName", "=", 
+      RowBox[{
+       RowBox[{"FileBaseName", "[", "notebookPath", "]"}], " ", "<>", 
+       "\"\<TheoremaTemplate\>\""}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"FileNameJoin", "[", 
+      RowBox[{"{", 
+       RowBox[{"directory", ",", 
+        RowBox[{"baseName", "<>", "latexExtension"}]}], "}"}], "]"}]}]}], 
+   "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"get", " ", "the", " ", "latex", " ", "file", " ", "name", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"the", " ", ".", "tex"}], "-", 
+      RowBox[{
+      "template", " ", "which", " ", "includes", " ", "the", " ", "main", " ",
+        "nb"}], "-", "content", "-", 
+      RowBox[{".", "tex"}], "-", 
+      RowBox[{"file", " ", "correctly"}]}], ")"}], " ", "with", " ", "full", 
+    " ", "path", " ", "from", " ", "a", " ", "given", " ", "notebook", " ", 
+    "path"}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.900486817800514*^9, 3.900486817802511*^9}, {
+  3.9004869454858975`*^9, 3.900486958590517*^9}, {3.9005634210379496`*^9, 
+  3.9005635137369633`*^9}},
+ CellLabel->
+  "In[272]:=",ExpressionUUID->"408dfbeb-7adc-44c3-bcaf-c5f562770768"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"provisionLatexTemplate", "[", 
+   RowBox[{"latexTemplatePath_String", ",", "resDir_String"}], "]"}], ":=", 
+  RowBox[{"CopyFile", "[", 
+   RowBox[{
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{"resDir", ",", "\"\<template.tex\>\""}], "}"}], "]"}], ",", 
+    "latexTemplatePath"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9005613820516624`*^9, 3.900561436363239*^9}, {
+  3.9005619645841784`*^9, 3.900562034601494*^9}, {3.9005621812658367`*^9, 
+  3.90056219573586*^9}, {3.900562280762045*^9, 3.9005622949602337`*^9}, {
+  3.9005627331801043`*^9, 3.9005627349541836`*^9}, {3.9005635897198315`*^9, 
+  3.9005636347852745`*^9}, {3.9005645115762243`*^9, 3.9005645126085467`*^9}, {
+  3.900564560625349*^9, 3.9005645704779005`*^9}},
+ CellLabel->
+  "In[273]:=",ExpressionUUID->"850c1a1d-320c-435c-a68b-ee234300e5f7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Main Function", "Chapter",
+ CellChangeTimes->{{3.900489513515665*^9, 
+  3.900489515593035*^9}},ExpressionUUID->"1b0527df-767f-4fd1-a18f-\
+30f6199be74b"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"convertToLatexDoc", "[", "notebookPath_", "]"}], " ", ":=", " ", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "nb", ",", " ", "content", ",", " ", "latexPath", ",", " ", 
+      "latexTemplatePath", ",", 
+      RowBox[{
+      "resourceDir", " ", "=", " ", 
+       "\"\<C:\\\\Users\\\\jackh\\\\OneDrive\\\\Documents\\\\RISC2023\\\\\
+prototype-wolfram-lang\\\\res\>\""}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"nb", "=", 
+      RowBox[{"NotebookOpen", "[", 
+       RowBox[{"notebookPath", ",", 
+        RowBox[{"Visible", "->", "False"}]}], "]"}]}], ";", 
+     RowBox[{"content", "=", 
+      RowBox[{"NotebookGet", "[", "nb", "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"latexPath", " ", "=", " ", 
+      RowBox[{"getLatexPath", "[", "notebookPath", "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"latexTemplatePath", " ", "=", " ", 
+      RowBox[{"getLatexTemplatePath", "[", "notebookPath", "]"}]}], ";", 
+     RowBox[{"provisionLatexTemplate", "[", 
+      RowBox[{"latexTemplatePath", ",", "resourceDir"}], "]"}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{"writeToLatexDoc", "[", 
+      RowBox[{"latexPath", ",", " ", "content"}], "]"}], ";"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.900485555169897*^9, 3.900485578208459*^9}, {
+   3.9004856339420586`*^9, 3.9004856837670665`*^9}, {3.9004858061409693`*^9, 
+   3.9004858226984634`*^9}, {3.9004859009688473`*^9, 
+   3.9004859598538394`*^9}, {3.90048606268195*^9, 3.9004860685465393`*^9}, {
+   3.9004861102261686`*^9, 3.9004861262863293`*^9}, {3.90048618385721*^9, 
+   3.900486184773184*^9}, {3.900486290360067*^9, 3.900486334323574*^9}, {
+   3.90048712405873*^9, 3.9004871310873375`*^9}, {3.9005586633931985`*^9, 
+   3.9005586648091373`*^9}, 3.9005587037547035`*^9, {3.9005622064645023`*^9, 
+   3.9005622517630467`*^9}, {3.900562315477219*^9, 3.900562353168891*^9}, {
+   3.900563329706066*^9, 3.9005633760802617`*^9}, {3.900563566136399*^9, 
+   3.9005635752051487`*^9}, {3.900565001684683*^9, 3.900565005083089*^9}, 
+   3.900565108359761*^9},
+ CellLabel->
+  "In[274]:=",ExpressionUUID->"b5eaa80b-e2e5-4e16-9d87-5d908824eeea"],
+
+Cell[CellGroupData[{
+
+Cell["Test", "Section",
+ CellChangeTimes->{{3.9005585895898924`*^9, 
+  3.9005585898621836`*^9}},ExpressionUUID->"86724e37-e5ee-4271-b958-\
+9262328a9f85"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "testNotebookPath", " ", "=", " ", 
+   "\"\<C:\\\\Users\\\\jackh\\\\OneDrive\\\\Documents\\\\RISC2023\\\\\
+prototype-wolfram-lang\\\\FirstTour.nb\>\""}], ";"}]], "Input",
+ CellChangeTimes->{{3.900485852227197*^9, 3.900485884900261*^9}, 
+   3.9004891508519917`*^9},
+ CellLabel->
+  "In[275]:=",ExpressionUUID->"eabc1b2f-2429-404a-874d-33b4741390c1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"getLatexTemplatePath", "[", "testNotebookPath", "]"}]], "Input",
+ CellChangeTimes->{3.9005646908116646`*^9},
+ CellLabel->
+  "In[276]:=",ExpressionUUID->"756f28c3-5f9b-41d7-b4e4-47c63497f4e4"],
+
+Cell[BoxData["\<\"C:\\\\Users\\\\jackh\\\\OneDrive\\\\Documents\\\\RISC2023\\\
+\\prototype-wolfram-lang\\\\FirstTourTheoremaTemplate.tex\"\>"], "Output",
+ CellChangeTimes->{
+  3.900564691498517*^9, {3.900572164856861*^9, 3.900572176482423*^9}},
+ CellLabel->
+  "Out[276]=",ExpressionUUID->"bca25b20-dfe7-4889-a325-d0a2a601407f"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"convertToLatexDoc", "[", "testNotebookPath", "]"}]], "Input",
+ CellLabel->
+  "In[277]:=",ExpressionUUID->"8b6be1fe-f490-4c1c-8252-8541e35dd511"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.900568442386528*^9, 3.900568445206664*^9}},
+ CellLabel->
+  "In[278]:=",ExpressionUUID->"b2441ebd-36e7-4cda-ba2f-2adf29214767"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{582, 655},
+WindowMargins->{{-684, Automatic}, {Automatic, -154.5}},
+FrontEndVersion->"13.3 for Microsoft Windows (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"0b502e4d-5526-4fb1-b87a-71aa682e1dc5"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 238, 4, 160, "Title",ExpressionUUID->"f28c367b-8e17-4350-8323-eee50ffed7dc"],
+Cell[821, 28, 1405, 33, 162, "Input",ExpressionUUID->"a1ea7d68-d6b9-49a0-a90b-6fef4434e88f"],
+Cell[CellGroupData[{
+Cell[2251, 65, 302, 5, 67, "Section",ExpressionUUID->"95e9ad1c-1c86-49cd-9b30-ec6fbdf7fbdb"],
+Cell[2556, 72, 227, 4, 28, "Input",ExpressionUUID->"87553d2d-04ac-42d9-965e-2bc09fb19c7a"]
+}, Open  ]],
+Cell[2798, 79, 154, 3, 67, "Section",ExpressionUUID->"ca42add5-145c-4533-9138-cd8570f4b57c"],
+Cell[CellGroupData[{
+Cell[2977, 86, 163, 3, 58, "Chapter",ExpressionUUID->"a4d41a30-90d5-4732-bf57-f97609ad7b4f"],
+Cell[3143, 91, 964, 19, 67, "Input",ExpressionUUID->"77aece67-a002-47a7-9667-6c83c41f46ff"],
+Cell[4110, 112, 610, 12, 48, "Input",ExpressionUUID->"20000e86-bf5e-48a2-b322-77c8afbf884b"],
+Cell[4723, 126, 597, 12, 28, "Input",ExpressionUUID->"76141cb7-c6b5-49aa-9778-1e9540a33f18"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5357, 143, 229, 4, 69, "Chapter",ExpressionUUID->"71293d8e-bd1a-4936-9139-f70ea48e43a7"],
+Cell[5589, 149, 1489, 31, 105, "Input",ExpressionUUID->"ca23ca93-3337-4749-9f05-837c82bd4ae1"],
+Cell[7081, 182, 1443, 34, 162, "Input",ExpressionUUID->"19b2e7b6-d2fd-4d44-8db3-67435a71bdb3"],
+Cell[8527, 218, 1564, 37, 162, "Input",ExpressionUUID->"408dfbeb-7adc-44c3-bcaf-c5f562770768"],
+Cell[10094, 257, 863, 17, 86, "Input",ExpressionUUID->"850c1a1d-320c-435c-a68b-ee234300e5f7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10994, 279, 158, 3, 69, "Chapter",ExpressionUUID->"1b0527df-767f-4fd1-a18f-30f6199be74b"],
+Cell[11155, 284, 2196, 44, 219, "Input",ExpressionUUID->"b5eaa80b-e2e5-4e16-9d87-5d908824eeea"],
+Cell[CellGroupData[{
+Cell[13376, 332, 153, 3, 67, "Section",ExpressionUUID->"86724e37-e5ee-4271-b958-9262328a9f85"],
+Cell[13532, 337, 384, 9, 67, "Input",ExpressionUUID->"eabc1b2f-2429-404a-874d-33b4741390c1"],
+Cell[CellGroupData[{
+Cell[13941, 350, 215, 4, 28, "Input",ExpressionUUID->"756f28c3-5f9b-41d7-b4e4-47c63497f4e4"],
+Cell[14159, 356, 327, 5, 52, "Output",ExpressionUUID->"bca25b20-dfe7-4889-a325-d0a2a601407f"]
+}, Open  ]],
+Cell[14501, 364, 168, 3, 28, "Input",ExpressionUUID->"8b6be1fe-f490-4c1c-8252-8541e35dd511"],
+Cell[14672, 369, 175, 3, 28, "Input",ExpressionUUID->"b2441ebd-36e7-4cda-ba2f-2adf29214767"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
