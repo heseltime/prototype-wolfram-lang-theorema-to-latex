@@ -16,4 +16,4 @@ Prototype1 (see the notebook with that name) implements a template object for pr
 
 # Future Development 
 
-To complete develop on this proof of concept basis, a clean package structure is deployed, utilizing Wolfram Workbench, the Eclipse Plugin. To keep initial thinking in the form of notes and the relevant tests around, this repo will soon reference the new setup and be paused for further development of the project here.
+To complete develop on this proof of concept basis, a clean package structure is deployed, utilizing Wolfram Workbench, the Eclipse Plugin. To keep initial thinking in the form of notes and the relevant tests around, this repo references [the cleaner package setup](https://github.com/heseltime/tma2tex/tree/master/tma2tex) at this point and is paused here for further development of the project.
